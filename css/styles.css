@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+/* ================= ROOT VARIABLES (MATCH BRAND) ================= */
+:root {
+  --primary: #0f4ab2;
+  --primary-light: #5586ff;
+  --dark: #20253a;
+  --text: #666;
+  --heading: #20253a;
+  --bg: #ffffff;
+  --light-bg: #f5f5f5;
+  --border: #e1e1e1;
+}
+
+/* ================= GLOBAL ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(.19,1,.22,1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Fira Sans", "Roboto", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo img {
+  height: 50px;
+  display: block;
+}
+/* NAV CONTAINER */
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+/* LOGO */
+.logo {
+  flex: 0 0 auto;
+}
+
+/* NAV LINKS WRAPPER */
+.nav-links {
+  flex: 1; /* take remaining space */
+  display: flex;
+  justify-content: space-evenly; /* THIS is the key */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* LINKS */
+.nav-links li {
+  flex: 1;
+  text-align: center;
+}
+
+/* NAV LINK STYLE (FIXED) */
+.nav-links a {
+  text-decoration: none; /* kill default underline */
+  color: var(--heading);
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+/* custom underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+/* hover */
+.nav-links a:hover {
+  color: #ffcc00;
+  text-decoration: none; /* VERY IMPORTANT override */
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 120px 20px 100px;
+}
+
+.section:nth-child(even) {
+  background: var(--light-bg);
+}
+
+/* ================= TYPOGRAPHY ================= */
+h1, h2, h3, h4 {
+  color: var(--heading);
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+}
+
+h1 { font-size: 34px; }
+h2 { font-size: 28px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+
+/* ================= HOME SECTION ================= */
+.home-section {
+  position: relative; /* for floating shapes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* take most of the viewport */
+  text-align: center;
+  background: linear-gradient(to bottom right, #f5f5f5, #ffffff); /* subtle gradient */
+  overflow: hidden; /* hide floating shapes outside */
+}
+
+/* Text animations */
+.home-section h1,
+.home-section p,
+.home-section .button {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.home-section h1 { animation-delay: 0.3s; }
+.home-section p { animation-delay: 0.6s; }
+.home-section .button { animation-delay: 0.9s; }
+
+/* Headings */
+.home-section h1 {
+  font-size: 36px;
+  color: var(--heading);
+  margin-bottom: 15px;
+}
+
+.home-section p {
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 25px;
+}
+
+/* Button styling */
+.home-section .button {
+  padding: 12px 30px;
+  text-decoration: none; /* remove underline */
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: #e6b800; /* same yellow as nav hover */
+  color: #000;
+  border: 2px solid #e6b800;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.home-section .button:hover {
+  background: #d4a700; /* slightly darker yellow */
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* ================= FLOATING SHAPES ================= */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.shape1 {
+  width: 100px;
+  height: 100px;
+  background: #e6b800;
+  top: 15%;
+  left: 10%;
+  animation-duration: 7s;
+}
+
+.shape2 {
+  width: 60px;
+  height: 60px;
+  background: #0f4ab2;
+  bottom: 20%;
+  right: 15%;
+  animation-duration: 10s;
+}
+
+.shape3 {
+  width: 80px;
+  height: 80px;
+  background: #5586ff;
+  top: 50%;
+  left: 50%;
+  animation-duration: 12s;
+}
+
+/* ================= PARALLAX EFFECT ================= */
+.home-section {
+  perspective: 1000px; /* optional, adds subtle depth */
+}
+
+.floating-shape {
+  transition: transform 0.1s linear; /* smooth parallax movement */
+}
+
+/* ================= KEYFRAMES ================= */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); }
+  50% { transform: translateY(-20px) translateX(15px) rotate(15deg); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); }
+}
+
+/* ================= FORM BUTTONS ================= */
+.form-buttons {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 15px; /* space between buttons */
+  margin-top: 20px; /* optional spacing from inputs */
+}
+
+/* Connect with us button (primary) */
+#submitBtn {
+  background: #ffffff; /* match header hover yellow */
+  color: #000000; /* same as headings */
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: 2px solid #e6b800;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+#submitBtn:hover {
+  background: #e6b800; /* slightly darker yellow on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+#submitBtn:disabled {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Clear button (secondary) */
+#clearBtn {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #e6b800;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+#clearBtn:hover {
+  background: #e6b800;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ================= CARDS ================= */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 220px;
+  background: #ffffff;
+  padding: 40px 20px; /* increase vertical padding */
+  border-radius: 5px;
+  border: 2px solid #e6b800;
+  transition: all 0.25s ease;
+  min-height: 300px; /* make cards taller */
+  display: flex;
+  align-items: center; /* vertically center content if needed */
+  justify-content: center; /* horizontally center content */
+  text-align: center;
+}
+
+/* hover effect */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ================= FORMS ================= */
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  outline: none;
+  font-size: 16px;
+}
+
+.form-group label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: #999;
+  background: #fff;
+  padding: 0 5px;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: var(--primary);
+}
+
+/* ================= LINKS ================= */
+a {
+  color: var(--primary);
+}
+
+a:hover:not(.nav-links a) {
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: row; /* keep horizontal */
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    justify-content: space-around;
+  }
+
+  .nav-links li {
+    flex: unset;
+  }
+
+  .section {
+    padding: 80px 15px;
+  }
+
+  .card {
+    min-width: 100%;
+  }
+}
+
+/* ================= SUCCESS MESSAGE ================= */
+/* Center intro text above the 3 boxes */
+.form-intro {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center; /* center horizontally */
+  color: var(--heading);
+}
+
+/* Green success message, minimal & sleek */
+/* ================= SUCCESS MODAL PROFESSIONAL ================= */
+.success-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* dim overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 2000;
+}
+
+.success-message.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.success-message p {
+  background: #fff;           /* modal box background */
+  color: #000;                /* text color */
+  padding: 30px 50px;         /* bigger padding for a clean look */
+  border-radius: 12px;        /* smooth corners */
+  font-weight: 600;           /* bold but not too heavy */
+  font-size: 18px;            /* match site headers */
+  max-width: 90%;
+  text-align: center;
+  border: 2px solid #e6b800; /* yellow border to match nav hover */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* soft shadow for depth */
+  transform: scale(0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* pop & subtle bounce effect when modal appears */
+.success-message.show p {
+  transform: scale(1);
+  transition: transform 0.3s cubic-bezier(.19,1,.22,1);
+  cursor: default;
+}
+
+/* Optional: adjust button spacing */
+#submitBtn, #clearBtn {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* form row for 3 inputs */
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* reuse form-group styles */
+.form-group {
+  flex: 1; /* evenly distributed */
+  position: relative;
+}
+
+/* textarea full width */
+.form-group.wide {
+  flex: 1 1 100%;
+}
+
+/* textarea styling like input */
+.form-group textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  outline: none;
+  font-size: 16px;
+  resize: vertical;
+}
+
+/* floating label for textarea */
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: var(--primary);
+}
+
+/* phone wrapper to hold select + input */
+.phone-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-wrapper select {
+  padding: 12px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.phone-wrapper input {
+  flex: 1;
+}
+
+/* make sure label sits above both select + input */
+.form-group label {
+  left: 12px;
+  top: 12px;
+  color: #999;
+  background: #fff;
+  padding: 0 5px;
+  pointer-events: none;
+  position: absolute;
+  transition: 0.2s;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* ================= SUCCESS MODAL ================= */
+.success-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* dim overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 2000;
+}
+
+.success-message.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.success-message p {
+  background: #fff; /* box background */
+  color: inherit;   /* keep text color */
+  padding: 25px 40px;
+  border-radius: 10px;
+  font-weight: 500;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+/* pop effect when modal shows */
+.success-message.show p {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 20px 15px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Footer links */
+.footer a {
+  color: #ffffff; /* match nav hover yellow */
+  text-decoration: none !important; /* force no underline */
+  font-weight: 500;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.footer a:hover {
+  color: #e6b800; /* slightly darker yellow */
+  text-decoration: none !important; /* also force no underline on hover */
+}
