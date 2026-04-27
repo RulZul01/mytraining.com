@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Sign Up - myTraining</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Company Logo" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#cards">Trainings</a></li>
+        <li><a href="index.html#hrdc">HRDC</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section home-section auth-section">
+    <div class="auth-container">
+
+      <h2 id="authTitle">Login</h2>
+
+      <form id="authForm">
+        <div class="form-group">
+          <input type="text" id="name" placeholder=" " style="display:none;" />
+          <label id="nameLabel" style="display:none;">Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="email" required placeholder=" " />
+          <label>Email</label>
+        </div>
+
+        <div class="form-group">
+          <input type="password" id="password" required placeholder=" " />
+          <label>Password</label>
+        </div>
+
+        <div class="form-group" id="roleGroup" style="display:none;">
+          <select id="role">
+            <option value="">Select Role</option>
+            <option value="trainer">Trainer</option>
+            <option value="trainee">Trainee</option>
+            <option value="tp">Training Provider</option>
+          </select>
+        </div>
+
+        <button type="submit" class="button">Continue</button>
+      </form>
+
+      <p id="toggleText">
+        Don’t have an account? <span id="toggleAuth">Sign up</span>
+      </p>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>
+      © 2026 Megabase Global Resources. All rights reserved |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Corporate Governance</a>
+    </p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

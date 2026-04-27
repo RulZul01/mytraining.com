@@ -3,97 +3,276 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FE Test - Fourtitude Asia</title>
+  <title>myTraining.com</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
+  <div id="dynamicContent"></div>
+
   <!-- ================= HEADER ================= -->
-  <header class="header">
-    <nav class="nav">
-      <div class="logo">
-        <a href="#home">
-          <img src="images/logo.png" alt="Company Logo" />
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#cards">Cards</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+ <header class="header">
+  <nav class="nav">
+    <div class="logo">
+      <a href="#home">
+        <img src="images/logo.png" alt="myTraining Logo" />
+      </a>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#trainings">Trainings</a></li>
+      <li><a href="#hrdc">HRDC</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="auth.html" class="nav-btn">Login / Sign Up</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- ================= HOME SECTION ================= -->
-  <section id="home" class="section home-section">
-    <div class="home-content">
-      <h1>| Welcome to fourtitude |</h1>
-      <p>Delivering the Best Digital Solutions</p>
-      <a href="#cards" class="button">Explore Our Services</a>
+<section id="home" class="home-section">
+  <div class="home-overlay"></div> <div class="home-content">
+    <span class="home-badge">HRD Corp Claimable Courses</span>
+    <h1>Welcome to <span class="text-gradient">myTraining</span></h1>
+    <p>
+      The premium ecosystem connecting <strong>Trainers</strong>, <strong>Trainees</strong>, and <strong>Providers</strong>. 
+      Streamline your professional growth with Malaysia's most trusted training platform.
+    </p>
+    
+    <div class="home-cta-group">
+      <a href="#trainings" class="button btn-primary">Browse Training</a>
+      <a href="auth.html" class="button btn-outline">Join the Platform</a>
     </div>
+  </div>
 
-    <!-- Floating shapes for animation -->
-    <div class="floating-shape shape1"></div>
-    <div class="floating-shape shape2"></div>
-    <div class="floating-shape shape3"></div>
-  </section>
+  <div class="floating-shape shape1"></div>
+  <div class="floating-shape shape2"></div>
+  <div class="floating-shape shape3"></div>
+</section>
 
-  <!-- ================= CARDS SECTION ================= -->
-  <section id="cards" class="section">
+  <section id="trainings" class="section">
+  <div class="section-header" style="text-align: center; margin-bottom: -10px;">
+    <h2 style="font-size: 2.5rem; color: var(--dark);">Featured Training Programs</h2>
+    <p style="color: var(--text); max-width: 600px; margin: 10px auto;">
+      Upskill your team with our HRDC claimable courses designed for the modern digital economy.
+    </p>
+  </div>
+
+  <div class="card-scroll-wrapper">
     <div class="card-container">
-      <div class="card"><div class="card__inner">Card 1</div></div>
-      <div class="card"><div class="card__inner">Card 2</div></div>
-      <div class="card"><div class="card__inner">Card 3</div></div>
+      
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/businessManagement.png" alt="Business Management"></div>
+        <div class="card__inner">
+          <span class="category-tag">Leadership</span>
+          <h3>Business Management</h3>
+          <p>Master the essentials of corporate leadership and strategy.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/genai.png" alt="Generative AI"></div>
+        <div class="card__inner">
+          <span class="category-tag">Technology</span>
+          <h3>Generative AI</h3>
+          <p>Harness the power of AI to transform your business workflows.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/UIUX.png" alt="UI/UX Design"></div>
+        <div class="card__inner">
+          <span class="category-tag">Design</span>
+          <h3>UI/UX Design</h3>
+          <p>Create stunning user experiences with modern design principles.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/digitalMarketing.png" alt="Digital Marketing"></div>
+        <div class="card__inner">
+          <span class="category-tag">Marketing</span>
+          <h3>Digital Marketing</h3>
+          <p>Growth strategies for a digital-first world and social media.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/dataScience.png" alt="Data Science"></div>
+        <div class="card__inner">
+          <span class="category-tag">Data</span>
+          <h3>Data Science</h3>
+          <p>Turning big data into actionable insights for better decisions.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/CloudComputing.png" alt="Cloud Computing"></div>
+        <div class="card__inner">
+          <span class="category-tag">Infrastructure</span>
+          <h3>Cloud Computing</h3>
+          <p>Scale your infrastructure with AWS, Azure, and Google Cloud.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/FinancialLiteracy.png" alt="Financial Literacy"></div>
+        <div class="card__inner">
+          <span class="category-tag">Finance</span>
+          <h3>Financial Literacy</h3>
+          <p>Master corporate budgeting and personal wealth management.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/ProjectManagement.png" alt="Project Management"></div>
+        <div class="card__inner">
+          <span class="category-tag">Management</span>
+          <h3>Project Management</h3>
+          <p>Learn Agile and Scrum methodologies to lead teams efficiently.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image"><img src="images/trainings/cybersecurity.png" alt="Cybersecurity"></div>
+        <div class="card__inner">
+          <span class="category-tag">Security</span>
+          <h3>Cybersecurity</h3>
+          <p>Protect your organization from digital threats and breaches.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+  <!-- ================= HRDC SECTION ================= -->
+<section id="hrdc" class="section hrdc-bg">
+  <div class="hrdc-container">
+    
+    <div class="hrdc-visual">
+      <div class="hrdc-image-wrapper">
+        <img src="images\trainings\hrdc.png" alt="HRDC Workforce Development">
+        <div class="hrdc-overlay-badge">HRD Corp Claimable</div>
+      </div>
+    </div>
+
+    <div class="hrdc-content">
+      <span class="sub-heading">Empowering Professionals</span>
+      <h2>Official HRD Corp Aligned Training</h2>
+      <p>
+        The Human Resource Development Corporation (HRDC) is the backbone of workforce development in Malaysia. We ensure your upskilling journey is supported by official initiatives and funding.
+      </p>
+
+      <div class="hrdc-features">
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-text">
+            <strong>Quality Assured</strong>
+            <p>All programs meet strict HRD Corp standards for professional growth.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💸</div>
+          <div class="feature-text">
+            <strong>100% Claimable</strong>
+            <p>Utilize company levies to fund training for your entire team.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📈</div>
+          <div class="feature-text">
+            <strong>Career Growth</strong>
+            <p>Verified certificates that boost your professional standing in Malaysia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- ================= CONTACT SECTION ================= -->
   <section id="contact" class="section">
-    <form id="contactForm">
-      <p class="form-intro">Got questions? Drop us a message!</p>
-
-      <div class="form-row">
-        <div class="form-group">
-          <input type="text" id="name" required placeholder=" " />
-          <label>Name</label>
+  <section id="contact" class="section">
+  <div class="contact-container">
+    
+    <div class="contact-info">
+      <span class="sub-heading">Get in Touch</span>
+      <h2>Let’s start a conversation</h2>
+      <p>Have questions about HRDC claims or our training modules? Our team is here to help you navigate your upskilling journey.</p>
+      
+      <div class="info-details">
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+            <div>
+                <strong>Call or WhatsApp Us</strong>
+                  <p>
+                    <a href="https://wa.me/60182506941" target="_blank" rel="noopener" class="whatsapp-link">
+                      +60 18 250 6941 (Admin Anita)
+                    </a>
+                  </p>
+              </div>
         </div>
-
-        <div class="form-group">
-          <input type="email" id="email" required placeholder=" " />
-          <label>Email address</label>
-        </div>
-
-        <div class="form-group">
-          <input type="text" id="contactNo" required placeholder=" " />
-          <label>Contact no.</label>
+        <div class="info-item">
+          <div class="info-icon">📧</div>
+            <div>
+              <strong>Email Us</strong>
+              <p>
+                <a href="mailto:admin@mytraining.my" class="email-link">
+                  admin@mytraining.my
+                </a>
+              </p>
+            </div>
         </div>
       </div>
+    </div>
 
-      <div class="form-group wide">
-        <textarea id="message" required placeholder=" "></textarea>
-        <label>How can we help?</label>
-      </div>
+    <div class="contact-form-wrapper">
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="name" required placeholder=" " />
+            <label>Full Name</label>
+          </div>
+        </div>
 
-      <div class="form-buttons">
-        <button type="submit" id="submitBtn" disabled>Connect with us</button>
-        <button type="button" id="clearBtn">Clear</button>
-      </div>
-    </form>
-  </section>
+        <div class="form-row">
+          <div class="form-group">
+            <input type="email" id="email" required placeholder=" " />
+            <label>Email Address</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="contactNo" required placeholder=" " />
+            <label>Contact No.</label>
+          </div>
+        </div>
 
-  <!-- ================= SUCCESS MESSAGE MODAL ================= -->
-  <div id="successMessage" class="success-message">
-    <p>Thank you! We will get in touch with you soon.</p>
+        <div class="form-group wide">
+          <textarea id="message" required placeholder=" "></textarea>
+          <label>How can we help?</label>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" id="submitBtn" class="btn-primary" disabled>Connect with us</button>
+          <button type="button" id="clearBtn" class="btn-clear">Clear</button>
+        </div>
+      </form>
+    </div>
+
   </div>
+</section>
 
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <p>
-      © 2026 fourtitude.asia. All rights reserved |
+      © 2026 Megabase Global Resources. All rights reserved |
       <a href="#">Privacy Policy</a> |
       <a href="#">Corporate Governance</a>
     </p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="js/script.js"></script>
 </body>

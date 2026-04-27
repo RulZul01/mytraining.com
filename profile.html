@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - myTraining</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Company Logo" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#cards">Trainings</a></li>
+        <li><a href="index.html#hrdc">HRDC</a></li>
+        <li><button id="logoutBtn" class="logout-link">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-section dashboard-bg">
+    <div id="profileContainer" class="page-card profile-dashboard">
+      
+      <div class="profile-sidebar">
+  <div class="profile-pic-wrapper">
+    <img id="profilePic" alt="Profile Picture" />
+  </div>
+  <h2 id="userName" class="sidebar-name"></h2> <p id="userRole" class="role-badge"></p>
+  
+  <div class="sidebar-divider"></div> 
+
+  <ul class="profile-menu">
+    <li class="active">My Dashboard</li>
+    <li>Settings</li>
+    <li>Certificates</li>
+  </ul>
+</div>
+
+      <div class="profile-main-content">
+        <h3>Welcome back!</h3>
+        <p>Manage your trainings and track your progress here.</p>
+        
+        <div id="dynamicContent" class="dashboard-grid">
+          <div class="card loading-card">Loading your content...</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Megabase Global Resources. All rights reserved</p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
